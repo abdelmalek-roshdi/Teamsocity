@@ -7,6 +7,6 @@ target 'Teamsocity' do
 
   # Pods for Teamsocity
 	pod 'Alamofire', '~> 4.0'
-	pod 'Kingfisher', '~> 4.0'
+	pod 'Kingfisher', '~> 4.7.0'
 	pod 'SwiftyJSON', '~> 4.0'
 end

@@ -242,9 +242,7 @@ public enum ServerTrustPolicy {
     private func trustIsValid(_ trust: SecTrust) -> Bool {
         var isValid = false
 
-        if #available(iOS 12, macOS 10.14, tvOS 12, watchOS 5, *) {
-            isValid = SecTrustEvaluateWithError(trust, nil)
-        } else {
+
             var result = SecTrustResultType.invalid
             let status = SecTrustEvaluate(trust, &result)
 
@@ -253,7 +251,7 @@ public enum ServerTrustPolicy {
                 let proceed = SecTrustResultType.proceed
 
                 isValid = result == unspecified || result == proceed
-            }
+            
         }
 
         return isValid
