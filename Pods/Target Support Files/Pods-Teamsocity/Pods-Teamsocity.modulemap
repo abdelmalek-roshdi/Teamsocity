@@ -1,0 +1,6 @@
+framework module Pods_Teamsocity {
+  umbrella header "Pods-Teamsocity-umbrella.h"
+
+  export *
+  module * { export * }
+}
