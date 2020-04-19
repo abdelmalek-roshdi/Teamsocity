@@ -31,7 +31,7 @@ class MainPresenter: MainPresenterProtocol {
         dataSource = MainDataSource.instance
         self.mainView = mainView
         
-         NotificationCenter.default.addObserver(self, selector: #selector(updateUI(with:)), name: .sportsArrayName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI(with:)), name: .sportsArrayName, object: nil)
     }
     
 }

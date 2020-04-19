@@ -27,6 +27,8 @@
 		55F0D202244B8A60007183F1 /* MianPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0D201244B8A60007183F1 /* MianPresenter.swift */; };
 		55F0D204244B8B4E007183F1 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0D203244B8B4E007183F1 /* MainViewProtocol.swift */; };
 		55F0D207244B954E007183F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0D206244B954E007183F1 /* Constants.swift */; };
+		55F98A30244CD89100D8FCB3 /* LeaguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F98A2F244CD89100D8FCB3 /* LeaguesViewController.swift */; };
+		55F98A32244CD8B200D8FCB3 /* LeaguesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F98A31244CD8B200D8FCB3 /* LeaguesViewProtocol.swift */; };
 		D4A25AF0B993B265F18FB0FC /* Pods_Teamsocity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2FA6052023299EEDF26153 /* Pods_Teamsocity.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		55F0D201244B8A60007183F1 /* MianPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianPresenter.swift; sourceTree = "<group>"; };
 		55F0D203244B8B4E007183F1 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
 		55F0D206244B954E007183F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		55F98A2F244CD89100D8FCB3 /* LeaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewController.swift; sourceTree = "<group>"; };
+		55F98A31244CD8B200D8FCB3 /* LeaguesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewProtocol.swift; sourceTree = "<group>"; };
 		6E2FA6052023299EEDF26153 /* Pods_Teamsocity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teamsocity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2928010085113D21497B9B5 /* Pods-Teamsocity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teamsocity.release.xcconfig"; path = "Target Support Files/Pods-Teamsocity/Pods-Teamsocity.release.xcconfig"; sourceTree = "<group>"; };
 		F9815165480B232DD316B11B /* Pods-Teamsocity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teamsocity.debug.xcconfig"; path = "Target Support Files/Pods-Teamsocity/Pods-Teamsocity.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		55E755F7244CBE1100A8DFED /* leagues */ = {
 			isa = PBXGroup;
 			children = (
+				55F98A2E244CD86100D8FCB3 /* view */,
 				55E75601244CD28900A8DFED /* Presenter */,
 				55E755FA244CC3BE00A8DFED /* model */,
 			);
@@ -186,6 +191,15 @@
 				551AFE85244BAEF70000B6B6 /* NotificationExtension.swift */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		55F98A2E244CD86100D8FCB3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				55F98A2F244CD89100D8FCB3 /* LeaguesViewController.swift */,
+				55F98A31244CD8B200D8FCB3 /* LeaguesViewProtocol.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		FB3BCA89774D034618F93924 /* Pods */ = {
@@ -321,9 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				551AFE86244BAEF70000B6B6 /* NotificationExtension.swift in Sources */,
+				55F98A30244CD89100D8FCB3 /* LeaguesViewController.swift in Sources */,
 				55E755FC244CC63200A8DFED /* LeaguesDataSource.swift in Sources */,
 				55F0D1FE244B890D007183F1 /* MainPresenterProtocol.swift in Sources */,
 				556F41222449E360008B1EEF /* ViewController.swift in Sources */,
+				55F98A32244CD8B200D8FCB3 /* LeaguesViewProtocol.swift in Sources */,
 				556F41282449E360008B1EEF /* Teamsocity.xcdatamodeld in Sources */,
 				55F0D204244B8B4E007183F1 /* MainViewProtocol.swift in Sources */,
 				551AFE8A244BC58D0000B6B6 /* LeaguesView.swift in Sources */,
