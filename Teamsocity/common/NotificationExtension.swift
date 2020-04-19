@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let sportsArrayName = Notification.Name("sportsArrayName")
+    static let leaguesArrayName = Notification.Name("leaguesArrayName")
 }

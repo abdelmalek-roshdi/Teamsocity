@@ -28,7 +28,7 @@ class MainPresenter: MainPresenterProtocol {
     
     init(mainView: MainViewProtocol) {
         
-        dataSource = MainDataSource()
+        dataSource = MainDataSource.instance
         self.mainView = mainView
         
          NotificationCenter.default.addObserver(self, selector: #selector(updateUI(with:)), name: .sportsArrayName, object: nil)

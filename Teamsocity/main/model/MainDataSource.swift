@@ -11,6 +11,11 @@ import Alamofire
 import SwiftyJSON
 class MainDataSource{
   
+    static let instance = MainDataSource()
+    
+    private init (){
+        
+    }
     func getSports() {
         
         Alamofire.request(Constants.BASE_URL_MAIN).response { response in

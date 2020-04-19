@@ -58,7 +58,6 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         return cell
     }
 
-//
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
@@ -76,46 +75,13 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
            print("selected item \(indexPath.item)")
        }
     
-//     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let cellWidth = UIScreen.main.bounds.width / 3.0
-//        let cellHight = UIScreen.main.bounds.height / 3.0
-//         return CGSize(width: cellWidth, height: cellHight)
-//    }
-//
-    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-//        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//
-//
-//
-//       let cellWidth = UIScreen.main.bounds.width / 3.0
-//       let cellHight = UIScreen.main.bounds.height / 3.0
-//
-//        return CGSize(width: width, height: height);
-//    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = UIScreen.main.bounds.width / 2.0
         let cellHight = UIScreen.main.bounds.height / 5.0
            return CGSize(width: cellWidth, height: cellHight)
        }
-    
-//    func setupCollectionViewItemSize(){
-//        if collectionViewFlowLayout == nil{
-//            let itemsPerRow:CGFloat = 2
-//            let lineSpacing:CGFloat = 5
-//            let interItemSpacing:CGFloat = 5
-//            
-//            let width = (collectionView.frame.width - (itemsPerRow - 1) * interItemSpacing) / itemsPerRow
-//            let height = width
-//            collectionViewFlowLayout = UICollectionViewFlowLayout()
-//            collectionViewFlowLayout?.itemSize = CGSize(width: width, height: height)
-//            collectionViewFlowLayout?.sectionInset = UIEdgeInsets(top: lineSpacing, left: lineSpacing, bottom: 0, right: lineSpacing)
-//         
-//            collectionView.setCollectionViewLayout(collectionViewFlowLayout!, animated: true)
-//        }
-//    }
-
     
 }
 
