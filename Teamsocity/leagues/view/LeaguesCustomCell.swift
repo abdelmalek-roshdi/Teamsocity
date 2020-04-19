@@ -1,14 +1,14 @@
 //
-//  LeaguesView.swift
+//  LeaguesCustomCell.swift
 //  Teamsocity
 //
-//  Created by Abd-Elmalek on 4/18/20.
+//  Created by Abd-Elmalek on 4/19/20.
 //  Copyright © 2020 ITI. All rights reserved.
 //
 
 import UIKit
 
-class LeaguesView: UIView {
+class LeaguesCustomCell: UITableViewCell  {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,5 +17,12 @@ class LeaguesView: UIView {
         // Drawing code
     }
     */
+    
+    @IBOutlet weak var customLabel: UILabel!
+     @IBOutlet weak var customImage: UIImageView!
+     @IBAction func custombutton(_ sender: Any) {
+    
+     }
+     
 
 }

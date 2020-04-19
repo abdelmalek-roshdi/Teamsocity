@@ -3,8 +3,11 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="9000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sports-->
@@ -83,6 +86,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1952.1739130434785" y="125.89285714285714"/>
+        </scene>
+        <!--Leagues View Controller-->
+        <scene sceneID="0ni-ha-hMD">
+            <objects>
+                <viewController id="NtQ-G3-t9m" customClass="LeaguesViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A9z-nN-56h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-sU-bXR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xMN-3I-m4U" customClass="LeaguesCustomCell" customModule="Teamsocity" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xMN-3I-m4U" id="9sY-BR-y0B">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NtQ-G3-t9m" id="ijW-fc-Joz"/>
+                                    <outlet property="delegate" destination="NtQ-G3-t9m" id="dAS-Vy-zOg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fa7-p6-gMF" firstAttribute="trailing" secondItem="A7d-sU-bXR" secondAttribute="trailing" id="27x-8N-YX1"/>
+                            <constraint firstItem="A7d-sU-bXR" firstAttribute="top" secondItem="Fa7-p6-gMF" secondAttribute="top" id="Mrv-Yc-Jgf"/>
+                            <constraint firstItem="Fa7-p6-gMF" firstAttribute="bottom" secondItem="A7d-sU-bXR" secondAttribute="bottom" id="k87-af-hyQ"/>
+                            <constraint firstItem="A7d-sU-bXR" firstAttribute="leading" secondItem="Fa7-p6-gMF" secondAttribute="leading" id="wJa-Ab-NQD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fa7-p6-gMF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ej3-yk-3ST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lgn-VV-MPx">
