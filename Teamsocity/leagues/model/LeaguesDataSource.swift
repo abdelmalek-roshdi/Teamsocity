@@ -17,7 +17,7 @@ class LeaguesDataSource{
   
      func getLeagues(sportName: String) {
         
-        Alamofire.request(Constants.BASE_URL_LEAGUES + sportName).response { response in
+        Alamofire.request(Constants.BASE_URL_LEAGUES + sportName.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)).response { response in
             
             if let statusCode = response.response?.statusCode{
                 var leaguesArray = [League]()
@@ -25,7 +25,7 @@ class LeaguesDataSource{
                     if let data = response.data {
                              
                               let json = JSON(data)
-                                             print("JSON: \(json)")
+                                             
                                          let leagues = json[Constants.COUNTRYS].arrayValue
                                              
                                          for league in leagues {
@@ -38,19 +38,19 @@ class LeaguesDataSource{
                                           leaguesArray.append(League(idLeague: id, strLeague: name, strDivision: devision, strYoutube: youtube, strBadge: badge))
                                           
                                              //let name = sport["strSport"]
-                                             print(name)
+                                             //print(name)
                                          }
-                              NotificationCenter.default.post(name: .leaguesArrayName, object: self, userInfo: [Constants.sportsArrayNotification:leaguesArray,"status" : "sucess"])
+                              NotificationCenter.default.post(name: .leaguesArrayName, object: self, userInfo: [Constants.leaguesArrayNotification:leaguesArray,"status" : "sucess"])
                           }
                           
                          
                           
                           
-                          debugPrint(response.data)
+                          
                 }
             } else {
                 
-                NotificationCenter.default.post(name: .leaguesArrayName, object: self, userInfo: [Constants.sportsArrayNotification:[League](),"status" : "failed"])
+                NotificationCenter.default.post(name: .leaguesArrayName, object: self, userInfo: [Constants.leaguesArrayNotification:[League](),"status" : "failed"])
             }
             
       

@@ -13,6 +13,7 @@ class ViewController: UIViewController,MainViewProtocol {
     var mainPressenter:MainPresenterProtocol?
     var collectionViewFlowLayout:UICollectionViewFlowLayout?
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     func updateUIViewSportData(sports: [Sport]) {
@@ -31,6 +32,16 @@ class ViewController: UIViewController,MainViewProtocol {
         
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           // Get the new view controller using segue.destination.
+           // Pass the selected object to the new view controller.
+        if (segue.identifier == "leagues_ViewCotroller"){
+            let destination = segue.destination as! ViewControllerLeagues
+            destination.leagueName = mySports?[collectionView.indexPathsForSelectedItems?.first?.row ?? 0].strSport
+        }
+           
+       }
     
 }
 
@@ -70,11 +81,14 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         return 0
     }
 
-     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-           print("selected item at row \(indexPath.row) and section \(indexPath.section)")
-           print("selected item \(indexPath.item)")
-       }
-    
+//     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+//        //let leaguesController: ViewControllerLeagues = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "leagues_ViewCotroller") as! ViewControllerLeagues
+//       // leaguesController.leagueName = mySports?[indexPath.row].strSport
+//        //self.present(leaguesController, animated: true, completion: nil)
+//           print("selected item at row \(indexPath.row) and section \(indexPath.section)")
+//           print("selected item \(indexPath.item)")
+//       }
+//    
 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <development version="9000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -59,6 +58,7 @@
                                         <connections>
                                             <outlet property="customImage" destination="TaL-Gt-95E" id="cCQ-55-a9k"/>
                                             <outlet property="customLabel" destination="ods-4p-KyN" id="FUM-wp-b1p"/>
+                                            <segue destination="agG-XN-zYi" kind="show" identifier="leagues_ViewCotroller" id="iUO-Pu-dxR"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -87,46 +87,40 @@
             </objects>
             <point key="canvasLocation" x="1952.1739130434785" y="125.89285714285714"/>
         </scene>
-        <!--Leagues View Controller-->
-        <scene sceneID="0ni-ha-hMD">
+        <!--View Controller Leagues-->
+        <scene sceneID="7h2-6N-NE4">
             <objects>
-                <viewController id="NtQ-G3-t9m" customClass="LeaguesViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A9z-nN-56h">
+                <viewController storyboardIdentifier="leagues_ViewCotroller" id="agG-XN-zYi" customClass="ViewControllerLeagues" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yRI-eK-h0g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-sU-bXR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="78V-ex-8Ia">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xMN-3I-m4U" customClass="LeaguesCustomCell" customModule="Teamsocity" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xMN-3I-m4U" id="9sY-BR-y0B">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="NtQ-G3-t9m" id="ijW-fc-Joz"/>
-                                    <outlet property="delegate" destination="NtQ-G3-t9m" id="dAS-Vy-zOg"/>
+                                    <outlet property="dataSource" destination="agG-XN-zYi" id="efz-Mp-htk"/>
+                                    <outlet property="delegate" destination="agG-XN-zYi" id="8UZ-0M-0hP"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Fa7-p6-gMF" firstAttribute="trailing" secondItem="A7d-sU-bXR" secondAttribute="trailing" id="27x-8N-YX1"/>
-                            <constraint firstItem="A7d-sU-bXR" firstAttribute="top" secondItem="Fa7-p6-gMF" secondAttribute="top" id="Mrv-Yc-Jgf"/>
-                            <constraint firstItem="Fa7-p6-gMF" firstAttribute="bottom" secondItem="A7d-sU-bXR" secondAttribute="bottom" id="k87-af-hyQ"/>
-                            <constraint firstItem="A7d-sU-bXR" firstAttribute="leading" secondItem="Fa7-p6-gMF" secondAttribute="leading" id="wJa-Ab-NQD"/>
+                            <constraint firstItem="78V-ex-8Ia" firstAttribute="leading" secondItem="Y2e-ry-TpF" secondAttribute="leading" id="7tR-Ac-cPT"/>
+                            <constraint firstItem="Y2e-ry-TpF" firstAttribute="trailing" secondItem="78V-ex-8Ia" secondAttribute="trailing" id="HiW-40-oNX"/>
+                            <constraint firstItem="Y2e-ry-TpF" firstAttribute="bottom" secondItem="78V-ex-8Ia" secondAttribute="bottom" id="S8f-QW-eUb"/>
+                            <constraint firstItem="78V-ex-8Ia" firstAttribute="top" secondItem="Y2e-ry-TpF" secondAttribute="top" id="d78-I5-fOW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Fa7-p6-gMF"/>
+                        <viewLayoutGuide key="safeArea" id="Y2e-ry-TpF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9qN-nZ-0PB"/>
+                    <connections>
+                        <outlet property="leaguesTable" destination="78V-ex-8Ia" id="xt3-JA-B2G"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ej3-yk-3ST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zp-bO-2AS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="126"/>
+            <point key="canvasLocation" x="2854" y="106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lgn-VV-MPx">

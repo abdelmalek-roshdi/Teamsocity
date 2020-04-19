@@ -1,5 +1,5 @@
 //
-//  LeaguesViewController.swift
+//  ViewControllerLeagues.swift
 //  Teamsocity
 //
 //  Created by Abd-Elmalek on 4/19/20.
@@ -8,11 +8,15 @@
 
 import UIKit
 
-class LeaguesViewController: UIViewController, LeaguesViewProtocol {
+class ViewControllerLeagues: UIViewController , LeaguesViewProtocol {
     
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var leaguesTable: UITableView!
     var leagues:[League]?
     var leaguesPresenter:LeaguesPresenter?
+    var leagueName:String?
+    var currentIndex = 0
+    let placeHolder = UIImage(named: "sport_placeholder")
     
     
     override func viewDidLoad() {
@@ -20,14 +24,16 @@ class LeaguesViewController: UIViewController, LeaguesViewProtocol {
         leagues = []
         leaguesPresenter = LeaguesPresenter(leaguesView: self)
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "cell")
+        self.leaguesTable.register(nib, forCellReuseIdentifier: "cell")
+        print(leagueName)
+        leaguesPresenter?.loadLeagues(leagueName: leagueName!)
         // Do any additional setup after loading the view.
     }
     
     func updateUIViewLeaguesData(leagues: [League]) {
         self.leagues = leagues
-        self.tableView.reloadData()
-        leaguesPresenter?.loadLeagues(leagueName: "Soccer")
+        self.leaguesTable.reloadData()
+        
     }
     
     /*
@@ -42,7 +48,7 @@ class LeaguesViewController: UIViewController, LeaguesViewProtocol {
 
 }
 
-extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -54,7 +60,10 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        
+        currentIndex = indexPath.row
+        cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].strBadge),placeholder: self.placeHolder)
+        cell.customLable.text = leagues?[indexPath.row].strLeague
+        cell.customButtonOutlet.addTarget(self, action: #selector(buttonAction(sender:)), for: UIControlEvents.touchUpInside)
         return cell
     }
     
@@ -64,5 +73,13 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
         return 200
     }
     
+   @objc func buttonAction(sender:UIButton!) {
+        
+    let url = URL(fileURLWithPath: (leagues?[currentIndex].strYoutube ?? ""))
+       // if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        //}
+    }
     
 }
+
