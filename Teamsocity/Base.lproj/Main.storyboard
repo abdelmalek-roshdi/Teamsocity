@@ -139,10 +139,29 @@
                     <view key="view" contentMode="scaleToFill" id="UiM-xF-zZf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LRY-SB-hGb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="agG-XN-zYi" id="GQi-Og-o1u"/>
+                                    <outlet property="delegate" destination="agG-XN-zYi" id="f3x-ec-hzw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LRY-SB-hGb" firstAttribute="leading" secondItem="o3V-8G-Ryh" secondAttribute="leading" id="ZyB-b6-KxZ"/>
+                            <constraint firstAttribute="bottom" secondItem="LRY-SB-hGb" secondAttribute="bottom" id="ijT-kr-rc6"/>
+                            <constraint firstItem="LRY-SB-hGb" firstAttribute="trailing" secondItem="o3V-8G-Ryh" secondAttribute="trailing" id="jDC-1a-LrG"/>
+                            <constraint firstItem="LRY-SB-hGb" firstAttribute="top" secondItem="wW1-OV-HkX" secondAttribute="bottom" id="nSV-hT-Ayi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="o3V-8G-Ryh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Faivorites" image="star.fill" catalog="system" id="aqM-Ir-zOK"/>
+                    <connections>
+                        <outlet property="favoritesTable" destination="LRY-SB-hGb" id="ggk-xu-6c2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPu-lE-pAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,10 +13,10 @@ class ViewControllerLeagues: UIViewController , LeaguesViewProtocol {
 
     @IBOutlet weak var leaguesTable: UITableView!
     var leagues:[League]?
-    var leaguesPresenter:LeaguesPresenter?
+    var leaguesPresenter:LeaguesPresenterProtocol?
     var leagueName:String?
     var currentIndex = 0
-    let placeHolder = UIImage(named: "sport_placeholder")
+    var placeHolder:UIImage?
     
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ViewControllerLeagues: UIViewController , LeaguesViewProtocol {
         leaguesPresenter = LeaguesPresenter(leaguesView: self)
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         self.leaguesTable.register(nib, forCellReuseIdentifier: "cell")
-        print(leagueName)
+        placeHolder =  UIImage(named: "sport_placeholder")
         leaguesPresenter?.loadLeagues(leagueName: leagueName!)
         // Do any additional setup after loading the view.
     }

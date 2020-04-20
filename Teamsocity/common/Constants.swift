@@ -26,4 +26,5 @@ enum Constants {
     static let strYoutube = "strYoutube"
     static let strBadge = "strBadge"
     static let leaguesArrayNotification = "leaguesArrayNotification"
+    static let savedLeaguesArrayNotification = "savedLeaguesArrayNotification"
 }
