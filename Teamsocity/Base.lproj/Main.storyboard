@@ -3,14 +3,20 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sports-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Sports" id="BYZ-38-t0r" customClass="ViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ciT-UU-5Ej"/>
+                        <viewControllerLayoutGuide type="bottom" id="JkD-l2-ppa"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,11 +75,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sCn-9k-MZm" secondAttribute="bottom" id="Lhy-ge-Wlj"/>
-                            <constraint firstItem="sCn-9k-MZm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apf-bI-FFv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sCn-9k-MZm" secondAttribute="trailing" id="vCb-oO-aat"/>
+                            <constraint firstItem="sCn-9k-MZm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="apf-bI-FFv"/>
+                            <constraint firstAttribute="trailing" secondItem="sCn-9k-MZm" secondAttribute="trailing" id="vCb-oO-aat"/>
                             <constraint firstItem="sCn-9k-MZm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="4" id="xBD-Ck-73g"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sports" image="sportscourt.fill" catalog="system" id="18s-d1-7Bh"/>
                     <navigationItem key="navigationItem" id="L1z-o8-NXM"/>
@@ -89,6 +94,10 @@
         <scene sceneID="7h2-6N-NE4">
             <objects>
                 <viewController storyboardIdentifier="leagues_ViewCotroller" id="agG-XN-zYi" customClass="ViewControllerLeagues" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dOd-8r-U9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="aAU-qt-nio"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yRI-eK-h0g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,12 +113,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="78V-ex-8Ia" firstAttribute="leading" secondItem="Y2e-ry-TpF" secondAttribute="leading" id="7tR-Ac-cPT"/>
-                            <constraint firstItem="Y2e-ry-TpF" firstAttribute="trailing" secondItem="78V-ex-8Ia" secondAttribute="trailing" id="HiW-40-oNX"/>
-                            <constraint firstItem="Y2e-ry-TpF" firstAttribute="bottom" secondItem="78V-ex-8Ia" secondAttribute="bottom" id="S8f-QW-eUb"/>
-                            <constraint firstItem="78V-ex-8Ia" firstAttribute="top" secondItem="Y2e-ry-TpF" secondAttribute="top" id="d78-I5-fOW"/>
+                            <constraint firstItem="78V-ex-8Ia" firstAttribute="leading" secondItem="yRI-eK-h0g" secondAttribute="leading" id="7tR-Ac-cPT"/>
+                            <constraint firstAttribute="trailing" secondItem="78V-ex-8Ia" secondAttribute="trailing" id="HiW-40-oNX"/>
+                            <constraint firstItem="aAU-qt-nio" firstAttribute="top" secondItem="78V-ex-8Ia" secondAttribute="bottom" id="S8f-QW-eUb"/>
+                            <constraint firstItem="78V-ex-8Ia" firstAttribute="top" secondItem="dOd-8r-U9q" secondAttribute="bottom" id="d78-I5-fOW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Y2e-ry-TpF"/>
                     </view>
                     <navigationItem key="navigationItem" id="9qN-nZ-0PB"/>
                     <connections>
