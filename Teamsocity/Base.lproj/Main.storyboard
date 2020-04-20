@@ -3,9 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +33,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="xo5-wZ-KHy" customClass="CustomCollectionViewCell" customModule="Teamsocity" customModuleProvider="target">
                                         <rect key="frame" x="26.5" y="0.0" width="361" height="290"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vSc-8B-US9">
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -48,17 +47,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ods-4p-KyN" secondAttribute="bottom" constant="4" id="FU1-uG-SG7"/>
-                                                <constraint firstItem="TaL-Gt-95E" firstAttribute="leading" secondItem="vSc-8B-US9" secondAttribute="leading" id="XD7-Xc-qLy"/>
-                                                <constraint firstItem="TaL-Gt-95E" firstAttribute="top" secondItem="vSc-8B-US9" secondAttribute="top" id="fcm-sI-DE1"/>
-                                                <constraint firstItem="ods-4p-KyN" firstAttribute="centerX" secondItem="vSc-8B-US9" secondAttribute="centerX" id="igS-55-hOP"/>
-                                                <constraint firstAttribute="trailing" secondItem="TaL-Gt-95E" secondAttribute="trailing" id="nkq-Jr-723"/>
-                                                <constraint firstItem="ods-4p-KyN" firstAttribute="top" secondItem="TaL-Gt-95E" secondAttribute="bottom" constant="7.5" id="o7b-TA-wrC"/>
-                                                <constraint firstItem="TaL-Gt-95E" firstAttribute="centerX" secondItem="vSc-8B-US9" secondAttribute="centerX" id="t3m-nQ-Zhh"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="361" height="290"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ods-4p-KyN" secondAttribute="bottom" constant="4" id="FU1-uG-SG7"/>
+                                            <constraint firstItem="TaL-Gt-95E" firstAttribute="leading" secondItem="xo5-wZ-KHy" secondAttribute="leading" id="XD7-Xc-qLy"/>
+                                            <constraint firstItem="TaL-Gt-95E" firstAttribute="top" secondItem="xo5-wZ-KHy" secondAttribute="top" id="fcm-sI-DE1"/>
+                                            <constraint firstItem="ods-4p-KyN" firstAttribute="centerX" secondItem="xo5-wZ-KHy" secondAttribute="centerX" id="igS-55-hOP"/>
+                                            <constraint firstAttribute="trailing" secondItem="TaL-Gt-95E" secondAttribute="trailing" id="nkq-Jr-723"/>
+                                            <constraint firstItem="ods-4p-KyN" firstAttribute="top" secondItem="TaL-Gt-95E" secondAttribute="bottom" constant="7.5" id="o7b-TA-wrC"/>
+                                            <constraint firstItem="TaL-Gt-95E" firstAttribute="centerX" secondItem="xo5-wZ-KHy" secondAttribute="centerX" id="t3m-nQ-Zhh"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="customImage" destination="TaL-Gt-95E" id="cCQ-55-a9k"/>
                                             <outlet property="customLabel" destination="ods-4p-KyN" id="FUM-wp-b1p"/>
@@ -79,6 +77,7 @@
                             <constraint firstAttribute="trailing" secondItem="sCn-9k-MZm" secondAttribute="trailing" id="vCb-oO-aat"/>
                             <constraint firstItem="sCn-9k-MZm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="4" id="xBD-Ck-73g"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="tSF-UT-q5f"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sports" image="sportscourt.fill" catalog="system" id="18s-d1-7Bh"/>
                     <navigationItem key="navigationItem" id="L1z-o8-NXM"/>
@@ -118,6 +117,7 @@
                             <constraint firstItem="aAU-qt-nio" firstAttribute="top" secondItem="78V-ex-8Ia" secondAttribute="bottom" id="S8f-QW-eUb"/>
                             <constraint firstItem="78V-ex-8Ia" firstAttribute="top" secondItem="dOd-8r-U9q" secondAttribute="bottom" id="d78-I5-fOW"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="jj8-4Z-hkK"/>
                     </view>
                     <navigationItem key="navigationItem" id="9qN-nZ-0PB"/>
                     <connections>
@@ -127,6 +127,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zp-bO-2AS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2854" y="106"/>
+        </scene>
+        <!--Faivorites-->
+        <scene sceneID="giy-Vp-Tbq">
+            <objects>
+                <viewController storyboardIdentifier="faivoraiteLeagues_viewConroller" title="Faivorites" id="bBZ-Xb-ESq" customClass="FavoritesViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wW1-OV-HkX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ian-ms-WCF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UiM-xF-zZf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="o3V-8G-Ryh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Faivorites" image="star.fill" catalog="system" id="aqM-Ir-zOK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPu-lE-pAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2836" y="800"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lgn-VV-MPx">
@@ -159,6 +179,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="iop-AB-1Dx"/>
+                        <segue destination="bBZ-Xb-ESq" kind="relationship" relationship="viewControllers" id="FSP-yI-rbZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhD-8u-fHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -168,5 +189,6 @@
     </scenes>
     <resources>
         <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>
