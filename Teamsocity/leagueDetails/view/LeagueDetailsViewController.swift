@@ -8,8 +8,17 @@
 
 import UIKit
 
-class LeagueDetailsViewController: UIViewController {
+class LeagueDetailsViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
 
+    
+
+  
+    @IBOutlet weak var addLeagueTofavorites: UIButton!
+    
+    @IBOutlet weak var latestResultsCollectionView: UICollectionView!
+    @IBOutlet weak var eventsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var teamsCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +40,18 @@ class LeagueDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func AddLeagueToFavoriteAction(_ sender: Any) {
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = eventsCollectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as? EventCollectionViewCell
 
+        
+    }
 }

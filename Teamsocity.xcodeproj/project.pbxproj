@@ -41,6 +41,7 @@
 		D4A25AF0B993B265F18FB0FC /* Pods_Teamsocity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2FA6052023299EEDF26153 /* Pods_Teamsocity.framework */; };
 		F4D37314244E24B600346C96 /* LeagueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37313244E24B600346C96 /* LeagueDetailsViewController.swift */; };
 		F4D37316244E24DB00346C96 /* LeagueAndTeamDetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D37315244E24DB00346C96 /* LeagueAndTeamDetailsStoryboard.storyboard */; };
+		F4D3731A244E493600346C96 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D37319244E493600346C96 /* EventCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		A2928010085113D21497B9B5 /* Pods-Teamsocity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teamsocity.release.xcconfig"; path = "Target Support Files/Pods-Teamsocity/Pods-Teamsocity.release.xcconfig"; sourceTree = "<group>"; };
 		F4D37313244E24B600346C96 /* LeagueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsViewController.swift; sourceTree = "<group>"; };
 		F4D37315244E24DB00346C96 /* LeagueAndTeamDetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeagueAndTeamDetailsStoryboard.storyboard; sourceTree = "<group>"; };
+		F4D37319244E493600346C96 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9815165480B232DD316B11B /* Pods-Teamsocity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teamsocity.debug.xcconfig"; path = "Target Support Files/Pods-Teamsocity/Pods-Teamsocity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +283,7 @@
 			children = (
 				F4D37313244E24B600346C96 /* LeagueDetailsViewController.swift */,
 				F4D37315244E24DB00346C96 /* LeagueAndTeamDetailsStoryboard.storyboard */,
+				F4D37319244E493600346C96 /* EventCollectionViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				551AFE86244BAEF70000B6B6 /* NotificationExtension.swift in Sources */,
+				F4D3731A244E493600346C96 /* EventCollectionViewCell.swift in Sources */,
 				5597704D244CF83200109259 /* ViewControllerLeagues.swift in Sources */,
 				554D8F34244DE8E3001F83D9 /* FaivoritesPresenterProtocol.swift in Sources */,
 				55F98A30244CD89100D8FCB3 /* LeaguesViewController.swift in Sources */,
