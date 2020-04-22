@@ -67,6 +67,13 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if Reachability.isConnectedToNetwork(){
+            //TODO navigate to details controller
+        }else {
+            showAlert(title: "Not Connected", message: "please connect and try again later", button: "OK")
+        }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
