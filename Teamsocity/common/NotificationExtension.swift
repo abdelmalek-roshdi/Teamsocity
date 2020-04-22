@@ -12,4 +12,5 @@ extension Notification.Name {
     static let sportsArrayName = Notification.Name("sportsArrayName")
     static let leaguesArrayName = Notification.Name("leaguesArrayName")
     static let savedLeaguesArrayName = Notification.Name("savedLeaguesArrayName")
+    static let eventssArrayName = Notification.Name("eventsArrayName")
 }

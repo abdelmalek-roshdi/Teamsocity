@@ -25,18 +25,18 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
     }
     
     func getFavorites(){
-        concurrentFavoritesQueue.async(flags: .barrier) { [weak self] in
-           
-           guard let self = self else {
-             return
-           }
-          
-           let savedLeagues = self.getSavedLeaguesByEntityName("LeaguesEntity")
-            
-           DispatchQueue.main.async { [weak self] in
-             NotificationCenter.default.post(name: .savedLeaguesArrayName, object: self, userInfo: [Constants.savedLeaguesArrayNotification: savedLeagues,"status": "sucess"])
-           }
-         }
+//        concurrentFavoritesQueue.async(flags: .barrier) { [weak self] in
+//
+//          guard case self = self else {
+//             return
+//           }
+//
+//            let savedLeagues = self?.getSavedLeaguesByEntityName("LeaguesEntity")
+//
+//           DispatchQueue.main.async { [weak self] in
+//             NotificationCenter.default.post(name: .savedLeaguesArrayName, object: self, userInfo: [Constants.savedLeaguesArrayNotification: savedLeagues,"status": "sucess"])
+//           }
+//         }
     }
     
     

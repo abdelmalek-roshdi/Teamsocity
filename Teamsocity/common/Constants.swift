@@ -27,4 +27,10 @@ enum Constants {
     static let strBadge = "strBadge"
     static let leaguesArrayNotification = "leaguesArrayNotification"
     static let savedLeaguesArrayNotification = "savedLeaguesArrayNotification"
+    static let EVENTS = "events"
+   static let  idEvent = "idEvent"
+    static let strEvent = "strEvent"
+    static let strDateEvent = "strDate"
+    static let strTimeEvent = "strTime"
+    static let eventsArrayNotification = "eventsArrayNotification"
 }

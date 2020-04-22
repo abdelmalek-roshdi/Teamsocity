@@ -8,7 +8,13 @@
 
 import UIKit
 
-class LeagueDetailsViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+
+class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource , UICollectionViewDelegate , LeagueDetailsViewPotocol {
+    func updateUIViewEvent(events: [Event]) {
+        eventssArray = events
+        eventsCollectionView.reloadData()
+    }
+    
 
     
 
@@ -19,39 +25,46 @@ class LeagueDetailsViewController: UIViewController , UICollectionViewDelegate ,
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
     @IBOutlet weak var teamsCollectionView: UICollectionView!
+    var eventssArray:[Event]?
+    
+    var leagueDetailsProtocol:LeagueDetailsProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.eventsCollectionView.delegate = self
+        self.eventsCollectionView.dataSource = self
+        leagueDetailsProtocol = LeagueDetailsPresenter(leagueDetailsView: self)
+        leagueDetailsProtocol?.loadEvents()
 
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     @IBAction func AddLeagueToFavoriteAction(_ sender: Any) {
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  eventssArray?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = eventsCollectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as? EventCollectionViewCell
+        let cell = eventsCollectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
+        cell.eventName.text = eventssArray![indexPath.row].eventName
+        cell.eventDate.text = eventssArray![indexPath.row].eventDate
+        cell.eventTime.text = eventssArray![indexPath.row].eventTime
 
-        
+        return cell
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+
+
 }

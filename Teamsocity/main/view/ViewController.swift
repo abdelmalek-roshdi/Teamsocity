@@ -49,7 +49,7 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
     
     
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            mySports?.count ?? 0
+           return  mySports?.count ?? 0
       }
       func numberOfSections(in collectionView: UICollectionView) -> Int {
           return 1
