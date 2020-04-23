@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vvb-zr-m2b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdV-aC-xxp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,74 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Events" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TM1-Yg-ume">
-                                <rect key="frame" x="16" y="20" width="60" height="32"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Events" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TM1-Yg-ume">
+                                <rect key="frame" x="8" y="28" width="60" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Qx5-Mp-DCB"/>
+                                    <constraint firstAttribute="width" constant="60" id="TaJ-m7-KaF"/>
+                                    <constraint firstAttribute="height" constant="32" id="pdy-rG-AQd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Latest Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sRE-60-5sd">
-                                <rect key="frame" x="16" y="211" width="108" height="33"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-vn-FcY">
-                                <rect key="frame" x="9" y="60" width="357" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9fg-PS-hU4">
-                                        <rect key="frame" x="0.0" y="0.0" width="357" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mNn-0a-5fu">
-                                            <size key="itemSize" width="345" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="qFp-5h-n1a" customClass="EventCollectionViewCell" customModule="Teamsocity" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eA2-ts-l36">
-                                                            <rect key="frame" x="122" y="20" width="100" height="41"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        </textView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Date" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-jv-WUq">
-                                                            <rect key="frame" x="124" y="45" width="97" height="39"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        </textView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Time" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-BQ-NeX">
-                                                            <rect key="frame" x="128" y="84" width="88" height="33"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        </textView>
-                                                    </subviews>
-                                                </view>
-                                                <connections>
-                                                    <outlet property="eventDate" destination="eLv-jv-WUq" id="NiO-nD-zXG"/>
-                                                    <outlet property="eventName" destination="eA2-ts-l36" id="Cko-MV-JVY"/>
-                                                    <outlet property="eventTime" destination="MTt-BQ-NeX" id="IOR-L3-WQv"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
-                            </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POF-eU-IgQ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POF-eU-IgQ">
                                 <rect key="frame" x="8" y="259" width="359" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EUt-EO-oto">
                                     <size key="itemSize" width="356" height="120"/>
@@ -131,6 +77,12 @@
                                                 </textView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="teamDate" destination="85Z-Mx-E7j" id="bkf-MC-6Qf"/>
+                                            <outlet property="teamScore" destination="85Z-Mx-E7j" id="RNW-g6-xVh"/>
+                                            <outlet property="teamTime" destination="Gfh-vK-q05" id="I0Y-A4-CaX"/>
+                                            <outlet property="teamsName" destination="hpt-3v-clw" id="n7F-cP-emR"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -140,16 +92,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF8-ru-kXP">
-                                <rect key="frame" x="313" y="22" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF8-ru-kXP">
+                                <rect key="frame" x="321" y="28" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="AddLeagueToFavoriteAction:" destination="vvb-zr-m2b" eventType="touchUpInside" id="y0g-TY-swY"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-ZY-dtc">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-ZY-dtc">
                                 <rect key="frame" x="7" y="513" width="359" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LhP-Yh-ykz">
                                     <size key="itemSize" width="335" height="97"/>
@@ -171,37 +123,175 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="teamImageView" destination="dfm-Qn-lqm" id="g6I-zm-LfF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oxr-sj-tjn">
+                                <rect key="frame" x="8" y="60" width="359" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQx-Yz-YbT">
+                                    <size key="itemSize" width="345" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="geO-ih-HsL" customClass="EventCollectionViewCell" customModule="Teamsocity" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-dr-LRm">
+                                                    <rect key="frame" x="122" y="20" width="100" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Date" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jVW-dq-n7Q">
+                                                    <rect key="frame" x="124" y="45" width="97" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Time" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rjn-pE-DmK">
+                                                    <rect key="frame" x="128" y="84" width="88" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="eventDate" destination="jVW-dq-n7Q" id="R79-AX-CdS"/>
+                                            <outlet property="eventName" destination="DNg-dr-LRm" id="8gN-e2-Lmo"/>
+                                            <outlet property="eventTime" destination="Rjn-pE-DmK" id="b26-2n-HNg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Latest Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sRE-60-5sd">
+                                <rect key="frame" x="8" y="206" width="262.5" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="bottom" secondItem="TkG-ZY-dtc" secondAttribute="bottom" constant="8" id="2c9-Cd-UGA"/>
-                            <constraint firstItem="Cuh-f1-XB9" firstAttribute="top" secondItem="POF-eU-IgQ" secondAttribute="bottom" constant="8" id="6ma-bN-xx0"/>
-                            <constraint firstItem="POF-eU-IgQ" firstAttribute="top" secondItem="sRE-60-5sd" secondAttribute="bottom" constant="8" id="7hI-ID-ju7"/>
-                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="TkG-ZY-dtc" secondAttribute="trailing" constant="8" id="Ayq-iM-Tkv"/>
-                            <constraint firstItem="TkG-ZY-dtc" firstAttribute="top" secondItem="Cuh-f1-XB9" secondAttribute="bottom" constant="8" id="bed-mh-NZI"/>
-                            <constraint firstItem="TM1-Yg-ume" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="eFb-Be-IWF"/>
+                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="oxr-sj-tjn" secondAttribute="trailing" constant="8" id="OLr-gQ-rGT"/>
+                            <constraint firstItem="GF8-ru-kXP" firstAttribute="top" secondItem="mlt-Kk-vMd" secondAttribute="top" constant="8" id="SrH-YL-0eA"/>
+                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="GF8-ru-kXP" secondAttribute="trailing" constant="8" id="T4B-sX-8hV"/>
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="Vlk-aN-0PC"/>
+                            <constraint firstItem="TM1-Yg-ume" firstAttribute="top" secondItem="mlt-Kk-vMd" secondAttribute="top" constant="8" id="aKc-wq-8ea"/>
+                            <constraint firstItem="TM1-Yg-ume" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="fYo-ZU-fBM"/>
                             <constraint firstItem="Cuh-f1-XB9" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="ifc-Rq-btW"/>
-                            <constraint firstItem="sRE-60-5sd" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="nMR-bF-1pv"/>
-                            <constraint firstAttribute="trailing" secondItem="POF-eU-IgQ" secondAttribute="trailing" constant="8" id="uAf-zO-Rjw"/>
-                            <constraint firstItem="POF-eU-IgQ" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="uog-PS-o0d"/>
-                            <constraint firstItem="TM1-Yg-ume" firstAttribute="top" secondItem="mlt-Kk-vMd" secondAttribute="top" constant="8" id="xew-4m-Cip"/>
-                            <constraint firstItem="TkG-ZY-dtc" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="yoq-Qq-dNe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mlt-Kk-vMd"/>
                     </view>
                     <connections>
                         <outlet property="addLeagueTofavorites" destination="GF8-ru-kXP" id="P9J-av-rBf"/>
-                        <outlet property="eventsCollectionView" destination="9fg-PS-hU4" id="FX8-TG-SSs"/>
+                        <outlet property="eventsCollectionView" destination="oxr-sj-tjn" id="qkb-3r-no9"/>
                         <outlet property="latestResultsCollectionView" destination="POF-eU-IgQ" id="QMr-iV-zh9"/>
                         <outlet property="teamsCollectionView" destination="TkG-ZY-dtc" id="ffx-ba-tI1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DE-GL-7eV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103.2" y="30.134932533733135"/>
+            <point key="canvasLocation" x="-636" y="-125"/>
+        </scene>
+        <!--Team Details View Controller-->
+        <scene sceneID="5uB-7c-hsq">
+            <objects>
+                <viewController id="rdV-aC-xxp" customClass="TeamDetailsViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7xc-Ib-dXV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Lg-WC-ykG">
+                                <rect key="frame" x="16" y="9" width="169" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Team Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uXn-dU-8qB">
+                                <rect key="frame" x="203" y="9" width="135" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="League Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-5Q-pLP">
+                                <rect key="frame" x="203" y="55" width="123" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Country Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NC2-8E-EmX">
+                                <rect key="frame" x="193" y="96" width="166" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Formed Year" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gxo-sM-mdQ">
+                                <rect key="frame" x="197" y="134" width="147" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Stadium Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iKB-ok-NZQ">
+                                <rect key="frame" x="16" y="513" width="136" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Stadium Location" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-Ig-aXm">
+                                <rect key="frame" x="16" y="565" width="136" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zx8-AF-t0a">
+                                <rect key="frame" x="16" y="342" width="347" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Stadium" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ry5-dD-fh6">
+                                <rect key="frame" x="16" y="270" width="96" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Afu-Af-wJJ"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="leagueName" destination="TGT-5Q-pLP" id="RNP-mR-0RY"/>
+                        <outlet property="stadiumName" destination="iKB-ok-NZQ" id="XZC-ha-cJ0"/>
+                        <outlet property="staduimImage" destination="Zx8-AF-t0a" id="qC9-Ml-rpe"/>
+                        <outlet property="staduimLocation" destination="L0r-Ig-aXm" id="jHv-UM-TK1"/>
+                        <outlet property="teamCountrt" destination="NC2-8E-EmX" id="Ytw-OH-kNr"/>
+                        <outlet property="teamFormedYear" destination="gxo-sM-mdQ" id="9Kc-H1-bfr"/>
+                        <outlet property="teamImage" destination="7Lg-WC-ykG" id="mga-TY-bMR"/>
+                        <outlet property="teamName" destination="uXn-dU-8qB" id="dFd-1d-EqF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIA-m0-dPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="493.60000000000002" y="-439.43028485757122"/>
         </scene>
     </scenes>
 </document>

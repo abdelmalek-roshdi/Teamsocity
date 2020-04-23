@@ -12,4 +12,12 @@ protocol LeagueDetailsProtocol {
     
     func updateUI(with notification: Notification)
     
+    func loadLatestResults()
+    
+    func updateUIWithLatestResults(with notification: Notification)
+    
+    func loadTeams()
+    
+    func updateUIWithTeams(with notification: Notification)
+    
 }

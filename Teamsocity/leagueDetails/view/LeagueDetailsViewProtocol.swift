@@ -10,4 +10,6 @@ import Foundation
 protocol LeagueDetailsViewPotocol {
     
     func updateUIViewEvent(events: [Event])
+    func updateUIViewLatestResult(latestResult: [Event])
+    func updateUIViewTeam(teams: [Team])
 }
