@@ -16,8 +16,8 @@ class EventDataSource {
         
     }
     
-    func getEvents() {
-        let url = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4328"
+    func getEvents(id:String) {
+        let url = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id="+id
         var eventssArray = [Event]()
         Alamofire.request(url).response { response in
             
@@ -49,8 +49,8 @@ class EventDataSource {
         }
     }
     
-    func getLatestResults() {
-        let url = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4328"
+    func getLatestResults(id: String) {
+        let url = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id="+id
         var latestResultsArray = [Event]()
         Alamofire.request(url).response { response in
             
@@ -86,8 +86,8 @@ class EventDataSource {
         }
     }
     
-    func getTeam() {
-        let url = "https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328"
+    func getTeam(id:String) {
+        let url = "https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id="+id
         var teamsArray = [Team]()
         Alamofire.request(url).response { response in
             

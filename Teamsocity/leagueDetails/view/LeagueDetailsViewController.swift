@@ -30,6 +30,7 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
     
     @IBOutlet weak var addLeagueTofavorites: UIButton!
     
+ 
     @IBOutlet weak var latestResultsCollectionView: UICollectionView!
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
@@ -37,6 +38,7 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
     var eventssArray:[Event]?
     var latestResultsArray:[Event]?
     var teamsArray:[Team]?
+    var leagueForDetails: League?
     
     var leagueDetailsProtocol:LeagueDetailsProtocol?
     override func viewDidLoad() {
@@ -52,13 +54,41 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
         
     
         leagueDetailsProtocol = LeagueDetailsPresenter(leagueDetailsView: self)
-        leagueDetailsProtocol?.loadEvents()
+        leagueDetailsProtocol?.loadEvents(id: leagueForDetails?.idLeague.description ?? "")
 
-        leagueDetailsProtocol?.loadLatestResults()
-        leagueDetailsProtocol?.loadTeams()
-        // Do any additional setup after loading the view.
+        leagueDetailsProtocol?.loadLatestResults(id: leagueForDetails?.idLeague.description ?? "")
+        leagueDetailsProtocol?.loadTeams(id: leagueForDetails?.idLeague.description ?? "")
+        
+        setUpFavorite()
+       
+    }
+    
+    
+    func setUpFavorite(){
+        if ((leagueDetailsProtocol?.isFovorite(leagueId: leagueForDetails!.idLeague))!) {
+            if #available(iOS 13.0, *) {
+                addLeagueTofavorites.setImage(UIImage(systemName: "star.fill"), for: UIControlState.normal)
+            }
+        }else {
+            if #available(iOS 13.0, *) {
+               addLeagueTofavorites.setImage(UIImage(systemName: "star"), for: UIControlState.normal)
+           }
+        }
+    }
+    func addToFavorites(){
+        leagueDetailsProtocol?.addTofaVorite(league: leagueForDetails!)
+    }
+    func RemoveFromFavorites(){
+        leagueDetailsProtocol?.removeFromfaVorite(league: leagueForDetails!)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tewamDetailsSegue" {
+            let destination = segue.destination as! TeamDetailsViewController
+            destination.teamId = teamsArray?[teamsCollectionView.indexPathsForSelectedItems?.first?.row ?? 0].ID.description
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -67,6 +97,24 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
     
     
     @IBAction func AddLeagueToFavoriteAction(_ sender: Any) {
+        if (!(leagueDetailsProtocol?.isFovorite(leagueId: leagueForDetails!.idLeague))!){
+            if #available(iOS 13.0, *) {
+                
+                addLeagueTofavorites.setImage(UIImage(systemName: "star.fill"), for: UIControlState.normal)
+                leagueDetailsProtocol?.addTofaVorite(league: leagueForDetails!)
+            } else {
+              
+            }
+        }else {
+            if #available(iOS 13.0, *) {
+               
+               addLeagueTofavorites.setImage(UIImage(systemName: "star"), for: UIControlState.normal)
+               leagueDetailsProtocol?.removeFromfaVorite(league: leagueForDetails!)
+           } else {
+             
+           }
+        }
+        
     }
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -107,6 +155,12 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
         }
    
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.teamsCollectionView {
+            
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

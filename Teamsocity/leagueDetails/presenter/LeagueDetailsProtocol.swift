@@ -8,16 +8,21 @@
 
 import Foundation
 protocol LeagueDetailsProtocol {
-    func loadEvents()
+    func loadEvents(id:String)
     
     func updateUI(with notification: Notification)
     
-    func loadLatestResults()
+    func loadLatestResults(id:String)
     
     func updateUIWithLatestResults(with notification: Notification)
     
-    func loadTeams()
+    func loadTeams(id:String)
     
     func updateUIWithTeams(with notification: Notification)
     
+    func isFovorite(leagueId: Int)-> Bool
+    
+    func addTofaVorite(league: League)
+    
+    func removeFromfaVorite(league: League)
 }

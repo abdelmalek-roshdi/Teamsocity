@@ -9,8 +9,11 @@
 import Foundation
 
 class LeagueDetailsPresenter : LeagueDetailsProtocol {
-    func loadLatestResults() {
-        dataSource?.getLatestResults()
+    
+    lazy var dbSource: FavoritesDataSource = FavoritesDataSource.instance
+    
+    func loadLatestResults(id:String) {
+        dataSource?.getLatestResults(id: id)
         print("loadLatestResults")
     }
     
@@ -19,8 +22,8 @@ class LeagueDetailsPresenter : LeagueDetailsProtocol {
                 as! [Event])
     }
     
-    func loadTeams() {
-        dataSource?.getTeam()
+    func loadTeams(id:String) {
+        dataSource?.getTeam(id: id)
          print("loadTeam")
     }
     
@@ -32,10 +35,10 @@ class LeagueDetailsPresenter : LeagueDetailsProtocol {
     var leagueDetailsView:LeagueDetailsViewPotocol?
         var dataSource:EventDataSource?
     
-    func loadEvents() {
+    func loadEvents(id:String) {
    
           print("loadEvents")
-        dataSource?.getEvents()
+        dataSource?.getEvents(id: id)
         
     }
     
@@ -55,6 +58,17 @@ class LeagueDetailsPresenter : LeagueDetailsProtocol {
             NotificationCenter.default.addObserver(self, selector: #selector(updateUIWithLatestResults(with:)), name: .latestResultsArrayName, object: nil)
         
             NotificationCenter.default.addObserver(self, selector: #selector(updateUIWithTeams(with:)), name: .teamsArrayName, object: nil)
+    }
+    func isFovorite(leagueId: Int)-> Bool{
+        return dbSource.isFovorite(leagueId: leagueId)
+    }
+    
+    func addTofaVorite(league: League){
+        dbSource.saveLeague(league: league)
+    }
+    
+    func removeFromfaVorite(league: League){
+        dbSource.deleteSoredLeague(league: league)
     }
 }
 

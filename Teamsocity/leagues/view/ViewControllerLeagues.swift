@@ -36,15 +36,21 @@ class ViewControllerLeagues: UIViewController , LeaguesViewProtocol {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+             // Get the new view controller using segue.destination.
+             // Pass the selected object to the new view controller.
+          if (segue.identifier == "leaguesDetailsSegue2"){
+              let destination = segue.destination as! LeagueDetailsViewController
+            destination.leagueForDetails = leagues?[leaguesTable.indexPathForSelectedRow?.row ?? 0]
+            
+              //destination.leagueName = mySports?[collectionView.indexPathsForSelectedItems?.first?.row ?? 0].strSport
+          }
+             
+         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.leaguesTable.deselectRow(at: leaguesTable.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0), animated: true)
     }
-    */
 
 }
 
@@ -70,6 +76,10 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if Reachability.isConnectedToNetwork(){
             //TODO navigate to details controller
+            performSegue(withIdentifier: "leaguesDetailsSegue2", sender: tableView.cellForRow(at: indexPath))
+//                let storyboard: UIStoryboard = UIStoryboard(name: "LeagueAndTeamDetailsStoryboard", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "leaguesDetails_ViewController") as! LeagueDetailsViewController
+//                self.show(vc, sender: self)
         }else {
             showAlert(title: "Not Connected", message: "please connect and try again later", button: "OK")
         }

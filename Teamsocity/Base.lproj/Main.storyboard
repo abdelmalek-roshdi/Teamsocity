@@ -122,6 +122,7 @@
                     <navigationItem key="navigationItem" id="9qN-nZ-0PB"/>
                     <connections>
                         <outlet property="leaguesTable" destination="78V-ex-8Ia" id="xt3-JA-B2G"/>
+                        <segue destination="Flg-0g-RSc" kind="show" identifier="leaguesDetailsSegue2" id="NRC-z0-Hez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zp-bO-2AS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,6 +167,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPu-lE-pAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2836" y="800"/>
+        </scene>
+        <!--LeagueAndTeamDetailsStoryboard-->
+        <scene sceneID="8tL-co-0NQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LeagueAndTeamDetailsStoryboard" id="Flg-0g-RSc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="McR-nm-Jhl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmD-Av-ENG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3667" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lgn-VV-MPx">

@@ -9,7 +9,7 @@
 import Foundation
 protocol TeamDetailsPresenterProtocol {
     
- func loadTeamDetails()
+    func loadTeamDetails(teamId: String)
 
 func updateUI(with notification: Notification)
 

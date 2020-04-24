@@ -23,10 +23,12 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewProtocol{
     @IBOutlet weak var staduimLocation: UITextView!
     var detailsModel:TeamDetailsModel?
     var teamDetailsPresenter : TeamDetailsPresenterProtocol?
+    
+    var teamId:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         teamDetailsPresenter = TeamDetailsPresenter(teamDetails: self)
-        teamDetailsPresenter?.loadTeamDetails()
+        teamDetailsPresenter?.loadTeamDetails(teamId: teamId ?? "")
       
 
         // Do any additional setup after loading the view.
