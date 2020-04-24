@@ -66,9 +66,13 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
    @objc func buttonAction(sender:UIButton!) {
         
-    let url = URL(fileURLWithPath: (leagues?[currentIndex].value(forKey: "strYoutube")  as? String ?? ""))
-       
+    
+    let url = NSURL(string:"https://\(String(describing: leagues?[currentIndex].value(forKey: "strYoutube")))")! as URL
+        if UIApplication.shared.canOpenURL(url){
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else{
+           showAlert(title: "not valid youtube link", message: "sorry for the inconveniece", button: "OK")
+        }
        
     }
     

@@ -67,6 +67,10 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         currentIndex = indexPath.row
+        
+        cell.customImage.layer.cornerRadius = 200
+        cell.customImage.clipsToBounds = true
+        cell.customImage.kf.indicatorType = .activity
         cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].strBadge),placeholder: self.placeHolder)
         cell.customLable.text = leagues?[indexPath.row].strLeague
         cell.customButtonOutlet.addTarget(self, action: #selector(buttonAction(sender:)), for: UIControlEvents.touchUpInside)
@@ -92,10 +96,12 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     
    @objc func buttonAction(sender:UIButton!) {
         
-    let url = URL(fileURLWithPath: (leagues?[currentIndex].strYoutube ?? ""))
-       // if UIApplication.shared.canOpenURL(url){
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        //}
+         let url = NSURL(string:"https://\(leagues?[currentIndex].strYoutube ?? "")")! as URL
+             if UIApplication.shared.canOpenURL(url){
+                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+             } else{
+                showAlert(title: "not valid youtube link", message: "sorry for the inconveniece", button: "OK")
+             }
     }
     
 }
