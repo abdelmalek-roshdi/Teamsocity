@@ -10,8 +10,8 @@ import Foundation
 class TeamDetailsPresenter : TeamDetailsPresenterProtocol {
     var teamDetailsView:TeamDetailsViewProtocol?
     var dataSource:TeamDetailsDataSource?
-    func loadTeamDetails() {
-        dataSource?.getTeamDetails()
+    func loadTeamDetails(teamId: String) {
+        dataSource?.getTeamDetails(id: teamId)
     }
     
    @objc func updateUI(with notification: Notification) {

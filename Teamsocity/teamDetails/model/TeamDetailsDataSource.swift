@@ -17,8 +17,8 @@ class TeamDetailsDataSource {
     private init (){
         
     }
-    func getTeamDetails() {
-        let url = "https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604"
+    func getTeamDetails(id: String) {
+        let url = "https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id="+id
         Alamofire.request(url).response { response in
             
             

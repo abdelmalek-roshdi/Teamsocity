@@ -25,18 +25,16 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
     }
     
     func getFavorites(){
-//        concurrentFavoritesQueue.async(flags: .barrier) { [weak self] in
-//
-//          guard case self = self else {
-//             return
-//           }
-//
-//            let savedLeagues = self?.getSavedLeaguesByEntityName("LeaguesEntity")
-//
-//           DispatchQueue.main.async { [weak self] in
-//             NotificationCenter.default.post(name: .savedLeaguesArrayName, object: self, userInfo: [Constants.savedLeaguesArrayNotification: savedLeagues,"status": "sucess"])
-//           }
-//         }
+        concurrentFavoritesQueue.async(flags: .barrier) { [weak self] in
+
+            guard case let self = self else {return}
+
+            let savedLeagues = self?.getSavedLeaguesByEntityName("LeaguesEntity")
+
+           DispatchQueue.main.async { [weak self] in
+             NotificationCenter.default.post(name: .savedLeaguesArrayName, object: self, userInfo: [Constants.savedLeaguesArrayNotification: savedLeagues,"status": "sucess"])
+           }
+         }
     }
     
     
@@ -61,7 +59,7 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
         if let mContext = self.managedContex{
             
             let leagueEntity = NSEntityDescription.insertNewObject(forEntityName: "LeaguesEntity", into: mContext)
-            
+           
             leagueEntity.setValue(league.strLeague, forKey: "strLeague")
             leagueEntity.setValue(league.strBadge, forKey: "strBadge")
             leagueEntity.setValue(league.strYoutube, forKey: "strYoutube")
@@ -77,5 +75,39 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
             
           
         }
+    }
+    
+    func deleteSoredLeague(league: League){
+        DispatchQueue.global(qos: .background).async {[weak self] in
+            guard let self = self else {return}
+            do {
+                if let mContext = self.managedContex{
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LeaguesEntity")
+                    fetchRequest.predicate = NSPredicate(format: "idLeague == %@", league.idLeague.description)
+                    let result = try mContext.fetch(fetchRequest)
+                    mContext.delete((result as! [NSManagedObject]).first!)
+                    try self.managedContex?.save()
+                       }
+                   } catch let error {
+                       print("Detele all data in LeaguesEntity error :", error)
+                   }
+        }
+    }
+    
+    func isFovorite(leagueId: Int)-> Bool{
+       do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LeaguesEntity")
+           fetchRequest.predicate = NSPredicate(format: "idLeague == %@", leagueId.description)
+            
+          if let mContext = self.managedContex{
+                let result = try mContext.fetch(fetchRequest)
+            if result.count > 0 {
+                return true
+            }
+                  }
+              } catch let error {
+                  print("Detele all data in LeaguesEntity error :", error)
+              }
+        return false
     }
 }

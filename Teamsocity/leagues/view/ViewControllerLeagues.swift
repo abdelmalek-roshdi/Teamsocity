@@ -36,15 +36,21 @@ class ViewControllerLeagues: UIViewController , LeaguesViewProtocol {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+             // Get the new view controller using segue.destination.
+             // Pass the selected object to the new view controller.
+          if (segue.identifier == "leaguesDetailsSegue2"){
+              let destination = segue.destination as! LeagueDetailsViewController
+            destination.leagueForDetails = leagues?[leaguesTable.indexPathForSelectedRow?.row ?? 0]
+            
+              //destination.leagueName = mySports?[collectionView.indexPathsForSelectedItems?.first?.row ?? 0].strSport
+          }
+             
+         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.leaguesTable.deselectRow(at: leaguesTable.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0), animated: true)
     }
-    */
 
 }
 
@@ -61,6 +67,10 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         currentIndex = indexPath.row
+        
+        cell.customImage.layer.cornerRadius = 100
+        cell.customImage.clipsToBounds = true
+        cell.customImage.kf.indicatorType = .activity
         cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].strBadge),placeholder: self.placeHolder)
         cell.customLable.text = leagues?[indexPath.row].strLeague
         cell.customButtonOutlet.addTarget(self, action: #selector(buttonAction(sender:)), for: UIControlEvents.touchUpInside)
@@ -70,6 +80,10 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if Reachability.isConnectedToNetwork(){
             //TODO navigate to details controller
+            performSegue(withIdentifier: "leaguesDetailsSegue2", sender: tableView.cellForRow(at: indexPath))
+//                let storyboard: UIStoryboard = UIStoryboard(name: "LeagueAndTeamDetailsStoryboard", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "leaguesDetails_ViewController") as! LeagueDetailsViewController
+//                self.show(vc, sender: self)
         }else {
             showAlert(title: "Not Connected", message: "please connect and try again later", button: "OK")
         }
@@ -82,10 +96,12 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     
    @objc func buttonAction(sender:UIButton!) {
         
-    let url = URL(fileURLWithPath: (leagues?[currentIndex].strYoutube ?? ""))
-       // if UIApplication.shared.canOpenURL(url){
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        //}
+         let url = NSURL(string:"https://\(leagues?[currentIndex].strYoutube ?? "")")! as URL
+             if UIApplication.shared.canOpenURL(url){
+                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+             } else{
+                showAlert(title: "not valid youtube link", message: "sorry for the inconveniece", button: "OK")
+             }
     }
     
 }

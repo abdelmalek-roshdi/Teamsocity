@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreData
 struct League {
     var idLeague: Int
     var strLeague: String

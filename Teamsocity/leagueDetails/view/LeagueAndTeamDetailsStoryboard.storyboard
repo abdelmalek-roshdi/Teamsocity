@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hrX-bC-PtD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vvb-zr-m2b">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +18,18 @@
         <!--League Details View Controller-->
         <scene sceneID="gzz-Iv-oBg">
             <objects>
-                <viewController id="vvb-zr-m2b" customClass="LeagueDetailsViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leaguesDetails_ViewController" id="vvb-zr-m2b" customClass="LeagueDetailsViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rjP-pY-8VN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Events" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TM1-Yg-ume">
                                 <rect key="frame" x="8" y="98" width="116" height="32"/>
+=======
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Events" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TM1-Yg-ume">
+                                <rect key="frame" x="8" y="8" width="60" height="32"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Qx5-Mp-DCB"/>
@@ -29,10 +39,18 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+<<<<<<< HEAD
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POF-eU-IgQ">
                                 <rect key="frame" x="8" y="329" width="359" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+=======
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POF-eU-IgQ">
+                                <rect key="frame" x="8" y="240" width="359" height="128"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ZEE-ss-vOA"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EUt-EO-oto">
                                     <size key="itemSize" width="356" height="146"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -86,17 +104,44 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF8-ru-kXP">
                                 <rect key="frame" x="297" y="72" width="70" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Favorite"/>
+=======
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Teams" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cuh-f1-XB9">
+                                <rect key="frame" x="8" y="385" width="68" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="mFD-32-yPM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF8-ru-kXP">
+                                <rect key="frame" x="327" y="8" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="cQP-Il-uj1"/>
+                                    <constraint firstAttribute="height" constant="40" id="z8L-sX-Ywi"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="star" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                 <connections>
                                     <action selector="AddLeagueToFavoriteAction:" destination="vvb-zr-m2b" eventType="touchUpInside" id="y0g-TY-swY"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-ZY-dtc">
                                 <rect key="frame" x="7" y="570" width="359" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+=======
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-ZY-dtc">
+                                <rect key="frame" x="8" y="421" width="359" height="226"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LhP-Yh-ykz">
                                     <size key="itemSize" width="148" height="97"/>
@@ -106,7 +151,11 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamCell" id="cRa-rO-Agl" customClass="TeamCollectionViewCell" customModule="Teamsocity" customModuleProvider="target">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="-6.5" width="148" height="97"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="97"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="148" height="97"/>
@@ -120,15 +169,27 @@
                                         </view>
                                         <connections>
                                             <outlet property="teamImageView" destination="dfm-Qn-lqm" id="g6I-zm-LfF"/>
+<<<<<<< HEAD
                                             <segue destination="rdV-aC-xxp" kind="push" id="HKf-uH-bXP"/>
+=======
+                                            <segue destination="rdV-aC-xxp" kind="showDetail" identifier="tewamDetailsSegue" id="9hJ-5k-td9"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+<<<<<<< HEAD
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oxr-sj-tjn">
                                 <rect key="frame" x="8" y="123" width="359" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+=======
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oxr-sj-tjn">
+                                <rect key="frame" x="8" y="60" width="359" height="128"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="mHJ-Br-YA6"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQx-Yz-YbT">
                                     <size key="itemSize" width="345" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -174,6 +235,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+<<<<<<< HEAD
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Latest Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sRE-60-5sd">
                                 <rect key="frame" x="16" y="270" width="262.5" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -186,15 +248,48 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+=======
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Latest Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sRE-60-5sd">
+                                <rect key="frame" x="8" y="200" width="359" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="O1S-XE-jgh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+<<<<<<< HEAD
+=======
+                            <constraint firstItem="POF-eU-IgQ" firstAttribute="top" secondItem="sRE-60-5sd" secondAttribute="bottom" constant="8" id="2XX-26-frd"/>
+                            <constraint firstItem="sRE-60-5sd" firstAttribute="top" secondItem="oxr-sj-tjn" secondAttribute="bottom" constant="12" id="DmN-VO-1PK"/>
+                            <constraint firstItem="TkG-ZY-dtc" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="F7e-0D-f4d"/>
+                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="bottom" secondItem="TkG-ZY-dtc" secondAttribute="bottom" constant="20" id="Fab-5i-z5N"/>
+                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="sRE-60-5sd" secondAttribute="trailing" constant="8" id="HAq-AI-OaB"/>
+                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="TkG-ZY-dtc" secondAttribute="trailing" constant="8" id="Jg9-ua-2e2"/>
+                            <constraint firstItem="TkG-ZY-dtc" firstAttribute="top" secondItem="Cuh-f1-XB9" secondAttribute="bottom" constant="8" id="LiN-N9-uk4"/>
+                            <constraint firstItem="sRE-60-5sd" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="Rin-uv-G2h"/>
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="trailing" secondItem="POF-eU-IgQ" secondAttribute="trailing" id="Rn6-a0-PDc"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                             <constraint firstItem="GF8-ru-kXP" firstAttribute="top" secondItem="mlt-Kk-vMd" secondAttribute="top" constant="8" id="SrH-YL-0eA"/>
                             <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="GF8-ru-kXP" secondAttribute="trailing" constant="8" id="T4B-sX-8hV"/>
                             <constraint firstItem="TM1-Yg-ume" firstAttribute="top" secondItem="mlt-Kk-vMd" secondAttribute="top" constant="8" id="aKc-wq-8ea"/>
                             <constraint firstItem="TM1-Yg-ume" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="fYo-ZU-fBM"/>
+<<<<<<< HEAD
+=======
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="top" secondItem="GF8-ru-kXP" secondAttribute="bottom" constant="12" id="g8l-Fq-YxS"/>
+                            <constraint firstItem="Cuh-f1-XB9" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="ifc-Rq-btW"/>
+                            <constraint firstItem="mlt-Kk-vMd" firstAttribute="trailing" secondItem="Cuh-f1-XB9" secondAttribute="trailing" constant="299" id="oQ5-jA-i68"/>
+                            <constraint firstItem="TkG-ZY-dtc" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="oUv-Ff-ICS"/>
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="leading" secondItem="sRE-60-5sd" secondAttribute="leading" id="oiF-3Z-8Oe"/>
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="leading" secondItem="POF-eU-IgQ" secondAttribute="leading" id="qW1-DD-QgM"/>
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="trailing" secondItem="GF8-ru-kXP" secondAttribute="trailing" id="sme-h3-2vA"/>
+                            <constraint firstItem="Cuh-f1-XB9" firstAttribute="top" secondItem="POF-eU-IgQ" secondAttribute="bottom" constant="17" id="vA9-KX-w2j"/>
+                            <constraint firstItem="oxr-sj-tjn" firstAttribute="leading" secondItem="mlt-Kk-vMd" secondAttribute="leading" constant="8" id="xYQ-hh-GvJ"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mlt-Kk-vMd"/>
                     </view>
@@ -215,7 +310,7 @@
             <objects>
                 <viewController id="rdV-aC-xxp" customClass="TeamDetailsViewController" customModule="Teamsocity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xc-Ib-dXV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Lg-WC-ykG">
@@ -294,6 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIA-m0-dPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="832.79999999999995" y="-439.43028485757122"/>
         </scene>
         <!--Navigation Controller-->
@@ -313,6 +409,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7k7-0t-FRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-868" y="-439"/>
+=======
+            <point key="canvasLocation" x="186" y="-125"/>
+>>>>>>> fef4f66814a44c28d71e0803365eb09a57d771fb
         </scene>
     </scenes>
+    <resources>
+        <image name="star" catalog="system" width="64" height="58"/>
+    </resources>
 </document>
