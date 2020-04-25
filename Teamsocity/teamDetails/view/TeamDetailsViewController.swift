@@ -63,7 +63,7 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewProtocol{
          leagueName.text = self.detailsModel?.leagueName
         teamName.text = self.detailsModel?.teamName
          stadiumName.text = self.detailsModel?.stadiumName
-        
+        staduimImage.kf.indicatorType = .activity
         staduimImage.kf.setImage(with: URL(string : (self.detailsModel?.stadiumImage)!))
         staduimLocation.text = self.detailsModel?.stadiumLocation
     }

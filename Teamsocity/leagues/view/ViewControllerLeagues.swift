@@ -79,11 +79,9 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if Reachability.isConnectedToNetwork(){
-            //TODO navigate to details controller
+
             performSegue(withIdentifier: "leaguesDetailsSegue2", sender: tableView.cellForRow(at: indexPath))
-//                let storyboard: UIStoryboard = UIStoryboard(name: "LeagueAndTeamDetailsStoryboard", bundle: nil)
-//                let vc = storyboard.instantiateViewController(withIdentifier: "leaguesDetails_ViewController") as! LeagueDetailsViewController
-//                self.show(vc, sender: self)
+
         }else {
             showAlert(title: "Not Connected", message: "please connect and try again later", button: "OK")
         }

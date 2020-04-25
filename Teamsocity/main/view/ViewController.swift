@@ -58,6 +58,7 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
         if let mySports = mySports {
+            cell.customImage.kf.indicatorType = .activity
             cell.customImage.kf.setImage(with: URL(string: mySports[indexPath.row].strSportThumb))
             cell.customLabel.text = mySports[indexPath.row].strSport
             

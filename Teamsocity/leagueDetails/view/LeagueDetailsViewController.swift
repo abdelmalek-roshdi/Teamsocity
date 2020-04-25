@@ -148,6 +148,7 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
             
         }else  if collectionView == self.teamsCollectionView  {
               let  cell = teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "teamCell", for: indexPath) as! TeamCollectionViewCell
+            cell.teamImageView.kf.indicatorType = .activity
             cell.teamImageView.kf.setImage(with: URL(string: teamsArray![indexPath.row].imageURL))
             print("team cell")
              return cell

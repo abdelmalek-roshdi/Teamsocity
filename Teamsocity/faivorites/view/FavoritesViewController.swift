@@ -56,6 +56,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         currentIndex = indexPath.row
+        cell.customImage.kf.indicatorType = .activity
         cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].value(forKey: "strBadge") as? String ?? ""),placeholder: self.placeHolder)
         cell.customLable.text = leagues?[indexPath.row].value(forKey: "strLeague") as? String ?? ""
         cell.customButtonOutlet.addTarget(self, action: #selector(buttonAction(sender:)), for: UIControlEvents.touchUpInside)
