@@ -16,14 +16,3 @@ struct League {
     var strBadge: String
     
 }
-extension League{
-     func toNSMangedObject() -> NSManagedObject{
-        let leagueObject = NSManagedObject()
-              leagueObject.setValue(self.strLeague, forKey: "strLeague")
-              leagueObject.setValue(self.strBadge, forKey: "strBadge")
-              leagueObject.setValue(self.strYoutube, forKey: "strYoutube")
-              leagueObject.setValue(self.idLeague, forKey: "idLeague")
-              leagueObject.setValue(self.strDivision, forKey: "strDivision")
-              return leagueObject
-    }
-}

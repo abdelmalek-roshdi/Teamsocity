@@ -81,9 +81,11 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
         DispatchQueue.global(qos: .background).async {[weak self] in
             guard let self = self else {return}
             do {
-                
                 if let mContext = self.managedContex{
-                           mContext.delete(league.toNSMangedObject())
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LeaguesEntity")
+                    fetchRequest.predicate = NSPredicate(format: "idLeague == %@", league.idLeague.description)
+                    let result = try mContext.fetch(fetchRequest)
+                    mContext.delete((result as! [NSManagedObject]).first!)
                     try self.managedContex?.save()
                        }
                    } catch let error {
@@ -95,7 +97,7 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
     func isFovorite(leagueId: Int)-> Bool{
        do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LeaguesEntity")
-        fetchRequest.predicate = NSPredicate(format: "idLeague == %@", leagueId.description)
+           fetchRequest.predicate = NSPredicate(format: "idLeague == %@", leagueId.description)
             
           if let mContext = self.managedContex{
                 let result = try mContext.fetch(fetchRequest)
