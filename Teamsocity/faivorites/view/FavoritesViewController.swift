@@ -29,6 +29,10 @@ class FavoritesViewController: UIViewController, FaivoritesViewProtocol {
         favoritesPresenter?.getSavedLeagues()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         favoritesPresenter?.getSavedLeagues()
+    }
+    
 
     func updateUIWithSoredData(leagues: [NSManagedObject]) {
         self.leagues = leagues
