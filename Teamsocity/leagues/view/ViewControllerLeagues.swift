@@ -65,8 +65,7 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         currentIndex = indexPath.row
         
-        cell.customImage.layer.cornerRadius = 100
-        cell.customImage.clipsToBounds = true
+        
         cell.customImage.kf.indicatorType = .activity
         cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].strBadge ?? ""),placeholder: self.placeHolder)
         cell.customLable.text = leagues?[indexPath.row].strLeague

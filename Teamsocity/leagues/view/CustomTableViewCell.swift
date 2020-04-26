@@ -16,7 +16,9 @@ class CustomTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       customImage.layer.cornerRadius = 75
+       customImage.clipsToBounds = true
+       customImage.layer.borderWidth = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
