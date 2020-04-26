@@ -162,6 +162,7 @@
                     <tabBarItem key="tabBarItem" title="Faivorites" image="star.fill" catalog="system" id="aqM-Ir-zOK"/>
                     <connections>
                         <outlet property="favoritesTable" destination="LRY-SB-hGb" id="ggk-xu-6c2"/>
+                        <segue destination="Flg-0g-RSc" kind="show" identifier="leaguesDetailsSegue1" id="57o-uI-dJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPu-lE-pAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -221,4 +222,7 @@
         <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="57o-uI-dJJ"/>
+    </inferredMetricsTieBreakers>
 </document>

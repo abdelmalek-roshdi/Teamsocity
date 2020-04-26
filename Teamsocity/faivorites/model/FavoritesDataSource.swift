@@ -83,7 +83,7 @@ class FavoritesDataSource: GetFavoritesLeaguesProtocol, SaveLeagueProtocol {
             do {
                 if let mContext = self.managedContex{
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LeaguesEntity")
-                    fetchRequest.predicate = NSPredicate(format: "idLeague == %@", league.idLeague.description)
+                    fetchRequest.predicate = NSPredicate(format: "idLeague == %@", league.idLeague?.description ?? "")
                     let result = try mContext.fetch(fetchRequest)
                     mContext.delete((result as! [NSManagedObject]).first!)
                     try self.managedContex?.save()

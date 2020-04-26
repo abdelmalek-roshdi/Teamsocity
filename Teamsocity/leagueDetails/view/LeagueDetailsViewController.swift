@@ -54,10 +54,10 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
         
     
         leagueDetailsProtocol = LeagueDetailsPresenter(leagueDetailsView: self)
-        leagueDetailsProtocol?.loadEvents(id: leagueForDetails?.idLeague.description ?? "")
+        leagueDetailsProtocol?.loadEvents(id: leagueForDetails?.idLeague?.description ?? "")
 
-        leagueDetailsProtocol?.loadLatestResults(id: leagueForDetails?.idLeague.description ?? "")
-        leagueDetailsProtocol?.loadTeams(id: leagueForDetails?.idLeague.description ?? "")
+        leagueDetailsProtocol?.loadLatestResults(id: leagueForDetails?.idLeague?.description ?? "")
+        leagueDetailsProtocol?.loadTeams(id: leagueForDetails?.idLeague?.description ?? "")
         
         setUpFavorite()
        
@@ -65,7 +65,7 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
     
     
     func setUpFavorite(){
-        if ((leagueDetailsProtocol?.isFovorite(leagueId: leagueForDetails!.idLeague))!) {
+        if ((leagueDetailsProtocol?.isFovorite(leagueId: leagueForDetails!.idLeague ?? 0))!) {
             if #available(iOS 13.0, *) {
                 addLeagueTofavorites.setImage(UIImage(systemName: "star.fill"), for: UIControlState.normal)
             }
@@ -97,7 +97,7 @@ class LeagueDetailsViewController: UIViewController ,UICollectionViewDataSource 
     
     
     @IBAction func AddLeagueToFavoriteAction(_ sender: Any) {
-        if (!(leagueDetailsProtocol?.isFovorite(leagueId: leagueForDetails!.idLeague))!){
+        if (!(leagueDetailsProtocol?.isFovorite(leagueId: leagueForDetails!.idLeague ?? 0))!){
             if #available(iOS 13.0, *) {
                 
                 addLeagueTofavorites.setImage(UIImage(systemName: "star.fill"), for: UIControlState.normal)

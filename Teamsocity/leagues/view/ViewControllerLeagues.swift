@@ -37,14 +37,11 @@ class ViewControllerLeagues: UIViewController , LeaguesViewProtocol {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-             // Get the new view controller using segue.destination.
-             // Pass the selected object to the new view controller.
+             
           if (segue.identifier == "leaguesDetailsSegue2"){
               let destination = segue.destination as! LeagueDetailsViewController
-            destination.leagueForDetails = leagues?[leaguesTable.indexPathForSelectedRow?.row ?? 0]
-            
-              //destination.leagueName = mySports?[collectionView.indexPathsForSelectedItems?.first?.row ?? 0].strSport
-          }
+              destination.leagueForDetails = leagues?[leaguesTable.indexPathForSelectedRow?.row ?? 0]
+           }
              
          }
     
@@ -71,7 +68,7 @@ extension ViewControllerLeagues: UITableViewDelegate, UITableViewDataSource {
         cell.customImage.layer.cornerRadius = 100
         cell.customImage.clipsToBounds = true
         cell.customImage.kf.indicatorType = .activity
-        cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].strBadge),placeholder: self.placeHolder)
+        cell.customImage.kf.setImage(with: URL(string: leagues![indexPath.row].strBadge ?? ""),placeholder: self.placeHolder)
         cell.customLable.text = leagues?[indexPath.row].strLeague
         cell.customButtonOutlet.addTarget(self, action: #selector(buttonAction(sender:)), for: UIControlEvents.touchUpInside)
         return cell

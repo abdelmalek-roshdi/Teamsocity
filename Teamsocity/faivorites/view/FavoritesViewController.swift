@@ -30,8 +30,21 @@ class FavoritesViewController: UIViewController, FaivoritesViewProtocol {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
          favoritesPresenter?.getSavedLeagues()
+         self.favoritesTable.deselectRow(at: favoritesTable.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0), animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+     if (segue.identifier == "leaguesDetailsSegue1"){
+         let destination = segue.destination as! LeagueDetailsViewController
+        destination.leagueForDetails = leagues?[favoritesTable.indexPathForSelectedRow?.row ?? 0].asLeague()
+      }
+        
+    }
+    
+   
     
 
     func updateUIWithSoredData(leagues: [NSManagedObject]) {
@@ -67,6 +80,16 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
         return 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if Reachability.isConnectedToNetwork(){
+
+            performSegue(withIdentifier: "leaguesDetailsSegue1", sender: tableView.cellForRow(at: indexPath))
+
+        }else {
+            showAlert(title: "Not Connected", message: "please connect and try again later", button: "OK")
+        }
     }
     
    @objc func buttonAction(sender:UIButton!) {

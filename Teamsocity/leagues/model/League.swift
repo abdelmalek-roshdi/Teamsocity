@@ -7,12 +7,15 @@
 //
 
 import Foundation
-import CoreData
 struct League {
-    var idLeague: Int
-    var strLeague: String
-    var strDivision: String
-    var strYoutube: String
-    var strBadge: String
+    var idLeague: Int?
+    var strLeague: String?
+    var strDivision: String?
+    var strYoutube: String?
+    var strBadge: String?
     
 }
+
+
+    
+
